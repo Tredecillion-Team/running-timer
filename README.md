@@ -15,7 +15,7 @@ Setelah Node.js terinstal, jalankan perintah berikut di terminal untuk menginsta
 
 ```bash
 npm install
-```
+````
 
 ## Menjalankan Aplikasi
 
