@@ -1,0 +1,122 @@
+<!-- /full/path/to/your/project/running-event-timer/public/control.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontrol Panel - Running Event</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kontrol Panel Event Lari</h1>
+
+        <div id="login-section">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p id="login-error" class="error-message"></p>
+        </div>
+
+        <div id="control-panel-section" style="display: none;">
+            <p>Selamat datang, <span id="user-greeting"></span>! (<span id="user-role"></span>) <button id="logout-button">Logout</button></p>
+            
+            <div id="timers-display">
+                <div class="race-category" id="timer-10k-display-wrapper">
+                    <h2>Lomba 10K</h2>
+                    <div class="timer" id="control-timer-10K">00:00:00.000</div>
+                </div>
+                <div class="race-category" id="timer-5k-display-wrapper">
+                    <h2>Lomba 5K</h2>
+                    <div class="timer" id="control-timer-5K">00:00:00.000</div>
+                </div>
+            </div>
+
+            <!-- Kontrol Admin -->
+            <div id="admin-controls" style="display: none;">
+                <h3>Kontrol Admin</h3>
+                <div class="race-controls">
+                    <h4>10K Controls</h4>
+                    <button id="start-10K">Start 10K</button>
+                    <button id="pause-10K">Pause 10K</button>
+                    <button id="reset-10K">Reset 10K</button>
+                </div>
+                <div class="race-controls">
+                    <h4>5K Controls</h4>
+                    <button id="start-5K">Start 5K</button>
+                    <button id="pause-5K">Pause 5K</button>
+                    <button id="reset-5K">Reset 5K</button>
+                </div>
+                
+                <h4>Split Times (Admin View)</h4>
+                <div class="split-times-container admin-splits">
+                    <div>
+                        <h5>10K Pria</h5>
+                        <table id="admin-splits-10K_MALE"><thead><tr><th>Rank</th><th>Waktu</th><th>BIB</th><th>Aksi</th></tr></thead><tbody></tbody></table>
+                    </div>
+                    <div>
+                        <h5>10K Wanita</h5>
+                        <table id="admin-splits-10K_FEMALE"><thead><tr><th>Rank</th><th>Waktu</th><th>BIB</th><th>Aksi</th></tr></thead><tbody></tbody></table>
+                    </div>
+                    <div>
+                        <h5>5K Pria</h5>
+                        <table id="admin-splits-5K_MALE"><thead><tr><th>Rank</th><th>Waktu</th><th>BIB</th><th>Aksi</th></tr></thead><tbody></tbody></table>
+                    </div>
+                    <div>
+                        <h5>5K Wanita</h5>
+                        <table id="admin-splits-5K_FEMALE"><thead><tr><th>Rank</th><th>Waktu</th><th>BIB</th><th>Aksi</th></tr></thead><tbody></tbody></table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kontrol Time Keeper -->
+            <div id="timekeeper-controls" style="display: none;">
+                <h3>Kontrol Time Keeper</h3>
+                <div id="tk-10k-section" class="race-controls" style="display:none;">
+                    <h4>Catat Split 10K</h4>
+                    <button class="split-button" data-category="10K_MALE">Split 10K Pria</button>
+                    <button class="split-button" data-category="10K_FEMALE">Split 10K Wanita</button>
+                    <div class="split-times-container tk-splits">
+                        <div>
+                            <h5>10K Pria</h5>
+                            <table id="tk-splits-10K_MALE"><thead><tr><th>Rank</th><th>Waktu</th><th>BIB</th><th>Aksi</th></tr></thead><tbody></tbody></table>
+                        </div>
+                        <div>
+                            <h5>10K Wanita</h5>
+                            <table id="tk-splits-10K_FEMALE"><thead><tr><th>Rank</th><th>Waktu</th><th>BIB</th><th>Aksi</th></tr></thead><tbody></tbody></table>
+                        </div>
+                    </div>
+                </div>
+                 <div id="tk-5k-section" class="race-controls" style="display:none;">
+                    <h4>Catat Split 5K</h4>
+                    <button class="split-button" data-category="5K_MALE">Split 5K Pria</button>
+                    <button class="split-button" data-category="5K_FEMALE">Split 5K Wanita</button>
+                    <div class="split-times-container tk-splits">
+                        <div>
+                            <h5>5K Pria</h5>
+                            <table id="tk-splits-5K_MALE"><thead><tr><th>Rank</th><th>Waktu</th><th>BIB</th><th>Aksi</th></tr></thead><tbody></tbody></table>
+                        </div>
+                        <div>
+                            <h5>5K Wanita</h5>
+                            <table id="tk-splits-5K_FEMALE"><thead><tr><th>Rank</th><th>Waktu</th><th>BIB</th><th>Aksi</th></tr></thead><tbody></tbody></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <p id="action-error" class="error-message"></p>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/control.js"></script>
+</body>
+</html>

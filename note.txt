@@ -1,0 +1,4 @@
+Halaman Kontrol: http://localhost:3000/control.html
+Login Admin: admin / adminpassword
+Login Time Keeper 10K: tk10k / tkpassword
+Login Time Keeper 5K: tk5k / tkpassword

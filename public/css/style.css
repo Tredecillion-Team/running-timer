@@ -1,0 +1,376 @@
+/* /full/path/to/your/project/running-event-timer/public/css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0; /* Hapus margin default body */
+    padding: 0; /* Hapus padding default body */
+    background-color: #2c3e50; /* Warna latar belakang utama yang lebih gelap dan elegan */
+    color: #ecf0f1; /* Warna teks default yang lebih terang */
+    /* Untuk tampilan layar penuh, kita ingin body dan html mengambil tinggi penuh */
+    height: 100vh;
+    display: flex; /* Gunakan flexbox untuk memusatkan container utama */
+    flex-direction: column; /* Susun item secara vertikal */
+    align-items: center; /* Pusatkan container secara horizontal */
+}
+
+html {
+    height: 100%;
+}
+
+.container {
+    /* max-width: 900px; /* Hapus atau sesuaikan max-width untuk layar besar */
+    width: 100%; /* Buat container mengambil lebar penuh */
+    /* margin: auto; /* Tidak lagi diperlukan jika body menggunakan flex untuk pemusatan */
+    padding: 20px; /* Beri sedikit padding di dalam container */
+    background: transparent; /* Buat container transparan agar latar body terlihat */
+    border-radius: 0; /* Hilangkan border-radius untuk tampilan lebih modern/flat */
+    box-shadow: none; /* Hilangkan box-shadow */
+    flex-grow: 1; /* Biarkan container tumbuh untuk mengisi ruang jika body flex */
+    display: flex; /* Gunakan flexbox di dalam container juga */
+    flex-direction: column; /* Susun item di dalam container secara vertikal */
+    box-sizing: border-box; /* Pastikan padding tidak menambah ukuran total */
+}
+
+/* Gaya untuk logo event */
+.event-logo {
+    max-width: 500px; /* Atur lebar maksimum logo. Sesuaikan nilai ini! */
+    width: 100%; /* Ini akan membuat logo responsif hingga max-width */
+    height: auto;     /* Jaga aspek rasio */
+    display: block;   /* Agar bisa dipusatkan dengan margin auto */
+    margin: 20px auto; /* Margin atas/bawah 20px, pusatkan horizontal */
+}
+
+h1, h2, h3, h4, h5 {
+    color: #ecf0f1; /* Warna teks heading yang lebih terang */
+    margin-bottom: 0.7em;
+}
+h1 { text-align: center; }
+/* Perbesar judul utama */
+// h1 { /* Hapus atau komentari blok h1 yang lama */
+//     font-size: 3em; /* Sedikit lebih besar */
+//     margin-bottom: 1em;
+//     color: #ffffff; /* Putih murni untuk judul utama */
+//     text-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sedikit shadow untuk kedalaman */
+// }
+
+.split-times-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%; /* Pastikan kontainer split mengambil lebar penuh dari .race-category */
+    flex-grow: 1; /* Biarkan kontainer split tumbuh */
+}
+
+.race-categories-wrapper {
+    display: flex;
+    justify-content: space-around; /* Memberi ruang di sekitar item */
+    align-items: stretch; /* Membuat item anak meregang untuk mengisi tinggi wrapper */
+    flex-grow: 1; /* Biarkan wrapper ini tumbuh mengisi ruang yang tersedia */
+    width: 100%; /* Pastikan wrapper mengambil lebar penuh */
+}
+
+.race-category, .race-controls {
+    background-color: #34495e; /* Warna latar kategori yang lebih gelap */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Shadow yang lebih halus */
+}
+
+/* Menyesuaikan .race-category ketika berada di dalam .race-categories-wrapper */
+.race-categories-wrapper > .race-category {
+    width: 48%; /* Lebar untuk dua kolom dengan sedikit celah */
+    margin-bottom: 0; /* Hapus margin bawah karena wrapper sudah menanganinya */
+    display: flex; /* Gunakan flex untuk mengatur konten di dalam race-category */
+    flex-direction: column; /* Susun item secara vertikal */
+    /* align-items: center; /* Pusatkan item di dalam kategori secara horizontal - ini mungkin tidak diinginkan untuk split-times-container */
+    align-items: center; /* Pusatkan item di dalam kategori secara horizontal */
+}
+
+/* Atur judul kategori lomba (Lomba 10K, Lomba 5K) */
+.race-categories-wrapper > .race-category > h2 {
+    font-size: 2em; /* Perbesar font judul kategori */
+    color: #1abc9c; /* Warna aksen untuk judul kategori */
+    margin-bottom: 0.5em; /* Jarak bawah yang lebih sedikit */
+    text-align: center; /* Pastikan teks di tengah */
+    width: 100%; /* Ambil lebar penuh untuk pemusatan yang benar */
+}
+
+.timer {
+    font-size: 6em; /* Perbesar ukuran font timer secara signifikan */
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff; /* Warna timer putih agar kontras */
+    margin-bottom: 0.2em; /* Kurangi margin bawah timer */
+    padding: 10px;
+    background-color: transparent; /* Timer tanpa background solid */
+    border: none; /* Hilangkan border timer */
+    border-radius: 4px;
+}
+
+.split-times-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%; /* Pastikan kontainer split mengambil lebar penuh dari .race-category */
+    flex-grow: 1; /* Biarkan kontainer split tumbuh */
+}
+
+.split-category, .admin-splits > div {
+    width: 48%;
+    margin-bottom: 10px;
+}
+
+.split-category h3, .admin-splits h5 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    font-size: 1.3em; /* Sedikit perbesar sub-judul split */
+    color: #bdc3c7; /* Warna yang lebih lembut untuk sub-judul split */
+}
+
+/* Styling untuk tabel secara umum */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead, thead tr {
+    background-color: rgba(255, 255, 255, 0.1); /* Latar belakang header tabel */
+    display: table;      /* Membuat thead berperilaku seperti tabel untuk layout kolom */
+    width: 100%;         /* Memastikan thead mengambil lebar penuh dari tabel parent */
+    table-layout: fixed; /* Menerapkan table-layout fixed juga pada thead */
+}
+
+th, td {
+    text-align: left;
+    padding: 8px; /* Sedikit kurangi padding agar lebih pas */
+    border-bottom: 1px solid rgba(236, 240, 241, 0.2); /* Border antar baris yang lembut */
+}
+
+th {
+    color: #1abc9c; /* Warna header tabel */
+    font-weight: bold;
+}
+
+/* Atur lebar kolom secara spesifik untuk halaman viewer */
+.split-category table th:nth-child(1), 
+.split-category table td:nth-child(1) { /* Kolom Rank */
+    width: 15%; 
+}
+.split-category table th:nth-child(2),
+.split-category table td:nth-child(2) { /* Kolom Waktu */
+    width: 55%;
+}
+.split-category table th:nth-child(3),
+.split-category table td:nth-child(3) { /* Kolom BIB */
+    width: 30%;
+}
+
+/* Atur lebar kolom secara spesifik untuk tabel di halaman kontrol (admin & time keeper) */
+/* Kolom Rank lebih kecil, Kolom Aksi lebih besar */
+.admin-splits table th:nth-child(1), 
+.admin-splits table td:nth-child(1),
+.tk-splits table th:nth-child(1),
+.tk-splits table td:nth-child(1) { /* Kolom Rank */
+    width: 10%; 
+}
+.admin-splits table th:nth-child(2),
+.admin-splits table td:nth-child(2),
+.tk-splits table th:nth-child(2),
+.tk-splits table td:nth-child(2) { /* Kolom Waktu */
+    width: 35%;
+}
+.admin-splits table th:nth-child(3), 
+.admin-splits table td:nth-child(3),
+.tk-splits table th:nth-child(3),
+.tk-splits table td:nth-child(3) { /* Kolom BIB */
+    width: 25%; 
+}
+/* Kolom ke-4 (Aksi) akan mengambil sisa lebar (100% - 10% - 35% - 25% = 30%) */
+
+/* Styling khusus untuk tabel di .split-category (halaman viewer) */
+.split-category > table { /* Target tabel langsung di dalam .split-category */
+    /* Tinggi keseluruhan untuk tabel di viewer, termasuk header dan body yang scrollable */
+    /* Anda bisa menggunakan vh atau nilai tetap lainnya */
+}
+
+/* Styling untuk tbody agar bisa di-scroll di halaman kontrol juga jika diperlukan */
+.admin-splits table > tbody,
+.tk-splits table > tbody { 
+    display: block; /* Membuat tbody menjadi elemen blok yang bisa di-scroll */
+    max-height: 25vh; /* Atur tinggi maksimum untuk area scroll tbody, sesuaikan! */
+    overflow-y: auto; /* Hanya tbody yang scroll */
+    width: 100%;      /* Pastikan tbody juga mengambil lebar penuh dari tabel induk */
+    box-sizing: border-box; /* Pastikan padding/border tidak menambah lebar */
+}
+
+/* Pastikan baris di tbody halaman kontrol juga di-layout sebagai tabel */
+.admin-splits table > tbody tr,
+.tk-splits table > tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    box-sizing: border-box;
+}
+
+/* Styling untuk tbody agar bisa di-scroll */
+.split-category > table > tbody {
+    display: block; /* Membuat tbody menjadi elemen blok yang bisa di-scroll */
+    max-height: 25vh; /* Atur tinggi maksimum untuk area scroll tbody, sesuaikan! */
+    overflow-y: auto; /* Hanya tbody yang scroll */
+    width: 100%;      /* Pastikan tbody juga mengambil lebar penuh dari tabel induk */
+    box-sizing: border-box;
+}
+
+/* Pastikan baris di tbody juga di-layout sebagai tabel */
+.split-category > table > tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    box-sizing: border-box;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03); /* Zebra striping halus */
+}
+
+/* Styling umum untuk tabel di admin dan tk, jika berbeda dari viewer */
+/* .split-category table, */ /* Kita sudah punya aturan lebih spesifik untuk .split-category > table */
+.admin-splits table, .tk-splits table {
+    width: 100%;         /* Tabel mengambil lebar penuh dari parent-nya */
+    table-layout: fixed;   /* Penting agar lebar kolom dihormati */
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+ul li {
+    /* Aturan ini mungkin tidak lagi relevan jika Anda sepenuhnya beralih ke tabel */
+    /* Jika masih ada 'ul' di tempat lain, pertahankan. Jika tidak, bisa dihapus. */
+    padding: 3px 0;
+    display: flex;
+    font-size: 0.9em; /* Sesuaikan ukuran font item split */
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hapus deklarasi 'ul' yang tidak valid ini */
+/* ul {
+    padding: 3px 0;
+    display: flex;
+    font-size: 0.9em; /* Sesuaikan ukuran font item split */
+    justify-content: space-between;
+    align-items: center;
+}
+*/
+
+/* Styling untuk input BIB dan tombol simpan di halaman kontrol */
+.bib-input {
+    width: 80px; /* Sesuaikan lebar input BIB */
+    padding: 5px;
+    border: 1px solid #bdc3c7;
+    border-radius: 3px;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.save-bib-btn {
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+/* Login Form */
+#login-form div {
+    margin-bottom: 10px;
+}
+#login-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #1abc9c; /* Warna tombol utama yang konsisten dengan aksen */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #16a085; /* Warna hover yang sedikit lebih gelap */
+}
+
+#logout-button {
+    background-color: #dc3545;
+}
+#logout-button:hover {
+    background-color: #c82333;
+}
+
+.tk-splits {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+    display: flex; /* Tambahkan flexbox untuk mengatur anak-anaknya */
+    justify-content: space-between; /* Beri sedikit ruang antar kolom */
+    flex-wrap: wrap; /* Biarkan wrap jika layar terlalu kecil */
+}
+
+.tk-splits > div {
+    width: 48%; /* Atur lebar agar dua kolom bisa muat dengan sedikit margin */
+    margin-bottom: 10px;
+}
+
+.tk-splits h5 { /* Mirip dengan .admin-splits h5 atau .split-category h3 */
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+/* Pusatkan tombol split di halaman Time Keeper dan beri jarak */
+#tk-10k-section,
+#tk-5k-section {
+    text-align: center; /* Memusatkan elemen inline-block seperti tombol */
+}
+
+#tk-10k-section .split-button,
+#tk-5k-section .split-button {
+    margin: 10px 10px; /* Atas/bawah 10px, Kiri/kanan 10px untuk jarak antar tombol */
+}
+
+.delete-split-btn {
+    background-color: #e67e22; /* Warna tombol delete yang berbeda */
+    color: #333;
+    padding: 3px 8px;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.delete-split-btn:hover {
+    background-color: #d35400;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+#admin-controls h3, #timekeeper-controls h3 {
+    margin-top: 20px;
+    border-top: 2px solid #1abc9c; /* Border top yang konsisten dengan aksen */
+    padding-top: 15px;
+}

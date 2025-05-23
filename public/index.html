@@ -1,0 +1,52 @@
+<!-- /full/path/to/your/project/running-event-timer/public/index.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running Event Timer - Viewer</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="/img/logo.png" alt="Logo Event Lari" class="event-logo">
+
+        <div class="race-categories-wrapper">
+            <div class="race-category">
+                <h2>Lomba 10K</h2>
+                <div class="timer" id="timer-10K">00:00:00.000</div>
+                <div class="split-times-container">
+                    <div class="split-category">
+                        <h3>10K Pria</h3>
+                        <table id="splits-10K_MALE"><thead><tr><th>Rank</th><th>Waktu</th><th>BIB</th></tr></thead><tbody></tbody></table>
+                    </div>
+                    <div class="split-category">
+                        <h3>10K Wanita</h3>
+                        <table id="splits-10K_FEMALE"><thead><tr><th>Rank</th><th>Waktu</th><th>BIB</th></tr></thead><tbody></tbody></table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="race-category">
+                <h2>Lomba 5K</h2>
+                <div class="timer" id="timer-5K">00:00:00.000</div>
+                <div class="split-times-container">
+                    <div class="split-category">
+                        <h3>5K Pria</h3>
+                        <table id="splits-5K_MALE"><thead><tr><th>Rank</th><th>Waktu</th><th>BIB</th></tr></thead><tbody></tbody></table>
+                    </div>
+                    <div class="split-category">
+                        <h3>5K Wanita</h3>
+                        <table id="splits-5K_FEMALE"><thead><tr><th>Rank</th><th>Waktu</th><th>BIB</th></tr></thead><tbody></tbody></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/viewer.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+    "name": "running-event-timer",
+    "version": "1.0.0",
+    "description": "Aplikasi running time untuk event lari",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "express-session": "^1.17.2",
+      "socket.io": "^4.3.1"
+    }
+  }
+  
