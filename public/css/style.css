@@ -374,3 +374,124 @@ button:hover {
     border-top: 2px solid #1abc9c; /* Border top yang konsisten dengan aksen */
     padding-top: 15px;
 }
+
+/* d:\Program\Running-Timer\public\css\style.css */
+
+/* ... (Aturan CSS Anda yang sudah ada) ... */
+
+/* Media Queries untuk Responsivitas */
+
+/* Untuk layar yang lebih kecil (misalnya, di bawah 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Kurangi padding container */
+    }
+
+    .event-logo {
+        max-width: 200px; /* Perkecil logo */
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 2em; /* Perkecil judul utama */
+    }
+
+    /* Buat kategori lomba menumpuk secara vertikal, bukan bersebelahan */
+    .race-categories-wrapper {
+        flex-direction: column; /* Ubah arah flex menjadi kolom */
+        align-items: center; /* Pusatkan item */
+    }
+
+    .race-categories-wrapper > .race-category {
+        width: 95%; /* Ambil hampir lebar penuh */
+        margin-bottom: 20px; /* Beri jarak antar kategori */
+    }
+
+    .race-categories-wrapper > .race-category:last-child {
+        margin-bottom: 0;
+    }
+
+    .timer {
+        font-size: 4em; /* Perkecil font timer */
+    }
+
+    .split-category h3, .admin-splits h5 {
+        font-size: 1.1em;
+    }
+
+    /* Untuk daftar split, mungkin buat Pria dan Wanita menumpuk */
+    .split-times-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .split-category, .admin-splits > div {
+        width: 90%; /* Ambil hampir lebar penuh */
+        margin-bottom: 15px;
+    }
+    
+    /* Sesuaikan tinggi area scroll tabel untuk layar kecil */
+    .split-category > table > tbody,
+    .admin-splits table > tbody,
+    .tk-splits table > tbody {
+        max-height: 20vh; /* Kurangi tinggi area scroll */
+    }
+
+    /* Halaman Kontrol: Tombol mungkin perlu menumpuk */
+    #tk-10k-section,
+    #tk-5k-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #tk-10k-section .split-button,
+    #tk-5k-section .split-button {
+        width: 80%; /* Buat tombol lebih lebar */
+        margin: 8px 0; /* Sesuaikan margin */
+    }
+
+    /* Halaman Kontrol: Tabel split time keeper mungkin perlu kolomnya lebih fleksibel */
+    .tk-splits {
+        flex-direction: column; /* Buat Pria/Wanita menumpuk */
+        align-items: center;
+    }
+    .tk-splits > div {
+        width: 90%; /* Ambil hampir lebar penuh */
+    }
+}
+
+/* Untuk layar yang sangat kecil (misalnya, di bawah 480px - smartphone) */
+@media (max-width: 480px) {
+    .event-logo {
+        max-width: 150px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .race-categories-wrapper > .race-category > h2 {
+        font-size: 1.5em; /* Perkecil judul kategori lomba */
+    }
+
+    .timer {
+        font-size: 3em; /* Perkecil lagi font timer */
+    }
+
+    /* Perkecil font pada tabel agar muat */
+    th, td {
+        padding: 6px;
+        font-size: 0.9em;
+    }
+
+    .bib-input {
+        width: 60px;
+        font-size: 0.9em;
+    }
+
+    .save-bib-btn {
+        padding: 4px 8px;
+        font-size: 0.9em;
+    }
+}
