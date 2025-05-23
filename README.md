@@ -1,4 +1,3 @@
-````markdown
 # Running-Timer
 
 Project ini dibuat untuk kebutuhan event Ma'soem Run 2025.
