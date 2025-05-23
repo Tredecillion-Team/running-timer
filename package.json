@@ -4,12 +4,12 @@
     "description": "Aplikasi running time untuk event lari",
     "main": "server.js",
     "scripts": {
-      "start": "node server.js"
+      "start": "node server.js",
+      "build": "echo \"No build step required\""
     },
     "dependencies": {
       "express": "^4.17.1",
       "express-session": "^1.17.2",
       "socket.io": "^4.3.1"
     }
-  }
-  
+}
