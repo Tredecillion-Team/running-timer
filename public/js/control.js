@@ -86,24 +86,46 @@ function showControlPanel(user) {
     if(timer10KDisplayWrapper) timer10KDisplayWrapper.style.display = 'none';
     if(timer5KDisplayWrapper) timer5KDisplayWrapper.style.display = 'none';
 
+    // Sembunyikan kontainer tabel TK secara default, HTML sudah melakukan ini
+    // tapi kita bisa pastikan di sini jika ada perubahan dinamis sebelumnya.
+    const tk10kTableContainer = tk10kSection.querySelector('.split-times-container.tk-splits');
+    if (tk10kTableContainer) tk10kTableContainer.style.display = 'none';
+    const tk5kTableContainer = tk5kSection.querySelector('.split-times-container.tk-splits');
+    if (tk5kTableContainer) tk5kTableContainer.style.display = 'none';
+
     if (user.role === 'ADMIN') {
         adminControls.style.display = 'block';
         // Admin juga bisa split, jadi tampilkan juga tombol split
+        // dari timekeeperControls, tk10kSection, dan tk5kSection.
+        // Tabel di dalam tk10kSection dan tk5kSection (tk-splits) akan tetap
+        // tersembunyi karena style="display: none;" di HTML.
         timekeeperControls.style.display = 'block';
         tk10kSection.style.display = 'block';
         tk5kSection.style.display = 'block';
+
         // Admin melihat kedua timer
         if(timer10KDisplayWrapper) timer10KDisplayWrapper.style.display = 'block';
         if(timer5KDisplayWrapper) timer5KDisplayWrapper.style.display = 'block';
+
     } else if (user.role === 'TIME_KEEPER_10K') {
         timekeeperControls.style.display = 'block';
         tk10kSection.style.display = 'block';
+        // Tampilkan tabel split untuk Time Keeper 10K
+        if (tk10kTableContainer) {
+            tk10kTableContainer.style.display = 'flex'; // Atau 'flex' jika layoutnya flex
+        }
+
         // Time Keeper 10K hanya melihat timer 10K
         if(timer10KDisplayWrapper) timer10KDisplayWrapper.style.display = 'block';
         if(timer5KDisplayWrapper) timer5KDisplayWrapper.style.display = 'none';
     } else if (user.role === 'TIME_KEEPER_5K') {
         timekeeperControls.style.display = 'block';
         tk5kSection.style.display = 'block';
+        // Tampilkan tabel split untuk Time Keeper 5K
+        if (tk5kTableContainer) {
+            tk5kTableContainer.style.display = 'flex'; // Atau 'flex' jika layoutnya flex
+        }
+
         // Time Keeper 5K hanya melihat timer 5K
         if(timer5KDisplayWrapper) timer5KDisplayWrapper.style.display = 'block';
         if(timer10KDisplayWrapper) timer10KDisplayWrapper.style.display = 'none';
