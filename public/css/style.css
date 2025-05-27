@@ -512,3 +512,27 @@ button:hover {
         font-size: 0.9em;
     }
 }
+
+/* Tambahkan ini ke file c:\AITool\running-timer\public\css\style.css */
+
+/* Styling untuk kontainer tabel split Time Keeper */
+.split-times-container.tk-splits {
+    /* display: flex; sudah diatur oleh JavaScript */
+    justify-content: space-around; /* Mendistribusikan ruang di sekitar item */
+    align-items: flex-start; /* Menjaga bagian atas tabel sejajar jika tingginya berbeda */
+    flex-wrap: wrap; /* Memungkinkan item untuk wrap ke baris berikutnya di layar yang sangat kecil */
+    gap: 20px; /* Memberikan jarak antar tabel Pria/Wanita */
+}
+
+/* Styling untuk setiap grup tabel (Pria/Wanita) di dalam kontainer tk-splits */
+.split-times-container.tk-splits > div {
+    flex: 1 1 45%; /* Memungkinkan item untuk membesar/menyusut, dengan basis sekitar 45% dari lebar kontainer */
+    /* Ini akan membuat dua tabel muat bersebelahan dengan sedikit ruang */
+    min-width: 280px; /* Lebar minimum sebelum item mulai mengecil atau wrap (jika flex-wrap aktif) */
+    box-sizing: border-box; /* Memastikan padding dan border termasuk dalam total lebar/tinggi */
+}
+
+/* Pastikan tabel di dalamnya menggunakan lebar penuh dari parent div-nya */
+.split-times-container.tk-splits > div table {
+    width: 100%;
+}
