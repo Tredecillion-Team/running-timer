@@ -4,7 +4,7 @@ body {
     line-height: 1.6;
     margin: 0; /* Hapus margin default body */
     padding: 0; /* Hapus padding default body */
-    background-color: #2c3e50; /* Warna latar belakang utama yang lebih gelap dan elegan */
+    background-color: #000000; /* Warna latar belakang utama yang lebih gelap dan elegan */
     color: #ecf0f1; /* Warna teks default yang lebih terang */
     /* Untuk tampilan layar penuh, kita ingin body dan html mengambil tinggi penuh */
     height: 100vh;
@@ -33,11 +33,23 @@ html {
 
 /* Gaya untuk logo event */
 .event-logo {
-    max-width: 500px; /* Atur lebar maksimum logo. Sesuaikan nilai ini! */
-    width: 100%; /* Ini akan membuat logo responsif hingga max-width */
+    max-width: 1000px; /* Lebar maksimum logo untuk desktop, sesuaikan jika perlu */
+    width: 100%;      /* Membuat logo responsif hingga max-width yang ditetapkan */
     height: auto;     /* Jaga aspek rasio */
     display: block;   /* Agar bisa dipusatkan dengan margin auto */
     margin: 20px auto; /* Margin atas/bawah 20px, pusatkan horizontal */
+    -webkit-filter: drop-shadow(1px 1px 1px #ffffff); /* Drop shadow putih untuk Safari & Chrome lama */
+    filter: drop-shadow(1px 1px 1px #ffffff); /* Drop shadow putih standar */
+}
+
+.category-logo {
+    max-width: 400px; /* Lebar maksimum logo untuk desktop, sesuaikan jika perlu */
+    width: 100%;      /* Membuat logo responsif hingga max-width yang ditetapkan */
+    height: auto;     /* Jaga aspek rasio */
+    display: block;   /* Agar bisa dipusatkan dengan margin auto */
+    margin: 20px auto; /* Margin atas/bawah 20px, pusatkan horizontal */
+    -webkit-filter: drop-shadow(1px 1px 1px #000000); /* Drop shadow putih untuk Safari & Chrome lama */
+    filter: drop-shadow(1px 1px 1px #000000); /* Drop shadow putih standar */
 }
 
 h1, h2, h3, h4, h5 {
@@ -46,12 +58,6 @@ h1, h2, h3, h4, h5 {
 }
 h1 { text-align: center; }
 /* Perbesar judul utama */
-// h1 { /* Hapus atau komentari blok h1 yang lama */
-//     font-size: 3em; /* Sedikit lebih besar */
-//     margin-bottom: 1em;
-//     color: #ffffff; /* Putih murni untuk judul utama */
-//     text-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sedikit shadow untuk kedalaman */
-// }
 
 .split-times-container {
     display: flex;
@@ -70,7 +76,7 @@ h1 { text-align: center; }
 }
 
 .race-category, .race-controls {
-    background-color: #34495e; /* Warna latar kategori yang lebih gelap */
+    background-color: #181c20; /* Warna latar kategori yang lebih gelap */
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -189,11 +195,6 @@ th {
 }
 /* Kolom ke-4 (Aksi) akan mengambil sisa lebar (100% - 10% - 35% - 25% = 30%) */
 
-/* Styling khusus untuk tabel di .split-category (halaman viewer) */
-.split-category > table { /* Target tabel langsung di dalam .split-category */
-    /* Tinggi keseluruhan untuk tabel di viewer, termasuk header dan body yang scrollable */
-    /* Anda bisa menggunakan vh atau nilai tetap lainnya */
-}
 
 /* Styling untuk tbody agar bisa di-scroll di halaman kontrol juga jika diperlukan */
 .admin-splits table > tbody,
@@ -255,15 +256,7 @@ ul li {
     align-items: center;
 }
 
-/* Hapus deklarasi 'ul' yang tidak valid ini */
-/* ul {
-    padding: 3px 0;
-    display: flex;
-    font-size: 0.9em; /* Sesuaikan ukuran font item split */
-    justify-content: space-between;
-    align-items: center;
-}
-*/
+
 
 /* Styling untuk input BIB dan tombol simpan di halaman kontrol */
 .bib-input {
@@ -388,8 +381,20 @@ button:hover {
     }
 
     .event-logo {
-        max-width: 200px; /* Perkecil logo */
+        max-width: 500px; /* Perkecil logo untuk tablet */
         margin-bottom: 15px;
+        -webkit-filter: drop-shadow(1px 1px 1px #ffffff); /* Drop shadow putih untuk Safari & Chrome lama */
+    filter: drop-shadow(1px 1px 1px #ffffff); /* Drop shadow putih standar */
+    }
+
+    .category-logo {
+    max-width: 400px; /* Lebar maksimum logo untuk desktop, sesuaikan jika perlu */
+    width: 100%;      /* Membuat logo responsif hingga max-width yang ditetapkan */
+    height: auto;     /* Jaga aspek rasio */
+    display: block;   /* Agar bisa dipusatkan dengan margin auto */
+    margin: 5px auto; /* Margin atas/bawah 20px, pusatkan horizontal */
+    -webkit-filter: drop-shadow(1px 1px 1px #000000); /* Drop shadow putih untuk Safari & Chrome lama */
+    filter: drop-shadow(1px 1px 1px #000000); /* Drop shadow putih standar */
     }
 
     h1 {
@@ -464,7 +469,19 @@ button:hover {
 /* Untuk layar yang sangat kecil (misalnya, di bawah 480px - smartphone) */
 @media (max-width: 480px) {
     .event-logo {
-        max-width: 150px;
+        max-width: 400px; /* Sesuaikan ukuran logo untuk smartphone, lebih besar dari 150px */
+        -webkit-filter: drop-shadow(0.5px 0.5px 0.5px #ffffff); /* Drop shadow putih untuk Safari & Chrome lama */
+    filter: drop-shadow(0.5px 0.5px 0.5px #ffffff); /* Drop shadow putih standar */
+    }
+
+    .category-logo {
+    max-width: 400px; /* Lebar maksimum logo untuk desktop, sesuaikan jika perlu */
+    width: 100%;      /* Membuat logo responsif hingga max-width yang ditetapkan */
+    height: auto;     /* Jaga aspek rasio */
+    display: block;   /* Agar bisa dipusatkan dengan margin auto */
+    margin: 5px auto; /* Margin atas/bawah 20px, pusatkan horizontal */
+    -webkit-filter: drop-shadow(0.5px 0.5px 0.5px #000000); /* Drop shadow putih untuk Safari & Chrome lama */
+    filter: drop-shadow(0.5px 0.5px 0.5px #000000); /* Drop shadow putih standar */
     }
 
     h1 {
